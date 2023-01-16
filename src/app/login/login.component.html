@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket booking</title>
+    <link rel="stylesheet" href=login.component.css>
+    <!---we had linked our css file----->
+</head>
+<body>
+    <!-- <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+         
+                Ticket Booking System
+            </a>
+            <ul class="nav navbar-nav navbar-right mx-4">
+              
+            </ul>
+        </div>
+    </nav> -->
+    
+    <div class="full-page">
+    <div class="navbar">
+        <div>
+            <h1 class="head">TICKET BOOKING SYSTEM</h1>
+        </div>
+        <nav>
+            <ul id='MenuItems'>
+                <!-- <li> <button routerLink="/adminlogin" class='loginbtn'>Admin Login</button> </li> -->
+               <li> <button class='loginbtn' routerLink="/login" >Login</button> </li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+
+    <div class="login-dark">
+        <form [formGroup]="loginForm">
+
+            <h2 class="sr-only">Login Form</h2>
+            
+            <div class="text-center mt-0 name" >
+                Login
+            </div>
+            
+            <div class="form-group"><input class="form-control" type="email " formControlName="email" name="email" placeholder="Email" >
+                <span *ngIf="isValid('email')">*email is required</span>
+            </div>
+            <div class="form-group"><input class="form-control" type="password" formControlName="password"  name="password" placeholder="Password" >
+                <span *ngIf="isValid('password')">*password is required</span>
+            </div>
+            <div class="form-group"><button  class="btn btn-primary btn-block"  (click)="login()">Login</button></div><a  class="forgot">Don't Have An Account?</a><a routerLink="/register"  class="forgot1" (click)="movetoregister()">Sign Up</a>
+        </form>
+    </div>
+    
+  
+   
+</body>
+
+</html>
+
+
+
+
+
+
+        

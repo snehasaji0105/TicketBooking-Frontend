@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket booking</title>
+    <link rel="stylesheet" href=register.component.css>
+    <!---we had linked our css file----->
+</head>
+<body>
+    <!-- <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              
+                Ticket Booking System
+            </a>
+            <ul class="nav navbar-nav navbar-right mx-4">
+               
+            </ul>
+        </div>
+    </nav> -->
+    <div class="full-page">
+        <div class="navbar">
+            <div>
+                <h1 class="head">TICKET BOOKING SYSTEM</h1>
+            </div>
+            <nav>
+                <ul id='MenuItems'>
+                    <!-- <li><a >Home</a></li> -->
+                    <!-- <li><a href='#'>Book Ticket</a></li>
+                    <li><a href='#'>About Us</a></li>
+                    <li><a href='#'>Services</a></li>
+                    <li><a href='#'>Contact</a></li> -->
+                    <!-- <li> <button routerLink="/adminlogin" class='loginbtn'>Admin Login</button> </li> -->
+                   <li> <button  class='loginbtn' routerLink="/login" >Login</button> </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+    <div class="login-dark">
+      
+          
+            <div class="form">
+  <form   [formGroup]="myForm">
+                <div class="text-center mt-0 name" >
+                    Create An Account
+                </div>
+                
+                <div class="form-group">
+                    <input class="form-control" formControlName="name" id="name" type="name" name="name" placeholder="Name" >
+                    <span  class="text-danger" *ngIf="isValid('name')">*name is required</span> 
+                </div>
+                <div class="form-group"><input class="form-control" formControlName="email" id="email"type="email" name="email" placeholder="Email">
+                    <span class="text-danger" *ngIf="isValid('email')">*email is required</span>
+                </div>
+                <div class="form-group"><input class="form-control" formControlName="password" type="password" name="password" placeholder="Password">
+                    <span  class="text-danger" *ngIf="isValid('password')">*password is required</span>
+                </div>
+                <div class="form-group"><input class="form-control" formControlName="password" id="pwd" type="password" name="password" placeholder=" Confirm Password">
+                    <span  class="text-danger" *ngIf="isValid('password')">*Passwords does not match</span>
+                </div>
+                <div class="form-group"><button class="btn btn-primary btn-block" (click)="register()">Register</button></div><a  class="forgot">Already Have Account?</a><a routerLink="/login" class="forgot1" (click)="movetologin()">Login</a>
+            </form>
+            </div>
+            <div style="text-align:center;">
+                {{successMessage}}
+            </div>
+     </div>
+    
+</body>
+
+</html>
+    
